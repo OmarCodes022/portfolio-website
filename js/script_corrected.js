@@ -6,7 +6,7 @@ let width, height, lines, letters, lineSpacing, letterSpacing, text;
 
 function resizeCanvas() {
     width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+    height = canvas.height = Math.max(window.innerHeight, 400);
 
     lines = Math.floor(height / 20);
     letters = Math.floor(width / 10) + 10;

@@ -1,0 +1,22 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.backup
+terraform.tfvars
+
+# AWS CLI Zip
+awscliv2.zip
+aws/
+
+# VS Code
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.csv
+.env

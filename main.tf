@@ -2,18 +2,22 @@ provider "aws" {
   region = "eu-west-3"  # Paris region, or change if needed
 }
 
-resource "aws_s3_bucket" "portfolio" {
-  bucket = "omarahmed-portfolio-site"  # MUST be unique across all AWS
+#resource "aws_s3_bucket" "portfolio" {
+#  bucket = "omarahmed-portfolio-site"  # MUST be unique across all AWS
+#
+#  website {
+#    index_document = "index.html"
+#    error_document = "404.html"
+#  }
+#
+#  tags = {
+#    Name        = "OmarAhmedPortfolio"
+#    Environment = "Dev"
+#  }
+#}
 
-  website {
-    index_document = "index.html"
-    error_document = "404.html"
-  }
-
-  tags = {
-    Name        = "OmarAhmedPortfolio"
-    Environment = "Dev"
-  }
+data "aws_s3_bucket" "portfolio" {
+  bucket = "omarahmed-portfolio-site"
 }
 
 resource "aws_s3_bucket_policy" "public_policy" {

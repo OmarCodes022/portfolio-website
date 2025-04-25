@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket         = "omarahmed-portfolio-site"
+    key            = "terraform/terraform.tfstate"
+    region         = "eu-west-3"
+  }
+}
+
 provider "aws" {
   region = "eu-west-3"  # Paris region, or change if needed
 }

@@ -1,9 +1,17 @@
+terraform {
+  backend "s3" {
+    bucket = "omarahmed-portfolio-site"
+    key    = "terraform/terraform.tfstate"
+    region = "eu-west-3"
+  }
+}
+
 provider "aws" {
-  region = "eu-west-3"  # Paris region, or change if needed
+  region = "eu-west-3"
 }
 
 resource "aws_s3_bucket" "portfolio" {
-  bucket = "omarahmed-portfolio-site"  # MUST be unique across all AWS
+  bucket = "omarahmed-portfolio-site"
 
   website {
     index_document = "index.html"
